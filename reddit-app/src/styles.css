@@ -1,16 +1,16 @@
-@import './app/vendor/semantic.min.css';
+@import "./app/vendor/semantic.min.css";
 
 .ui.menu .item img.logo {
-    margin-right: 1.5em;
+  margin-right: 1.5em;
 }
 
 form.ui.segment.form {
-  background-color: #F1F9FF;
+  background-color: #f1f9ff;
   margin-top: 2em;
 }
 
 form.form:after {
-  content: '';
+  content: "";
   display: block;
   height: 0;
   clear: both;
@@ -21,7 +21,7 @@ form.form:after {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #E6E6E6;
+  background-color: #e6e6e6;
   padding: 1em 0;
   border-radius: 5px;
 }
@@ -31,19 +31,18 @@ form.form:after {
 }
 
 .meta {
-  color: #9A9A9A
+  color: #9a9a9a;
 }
 
-.ui.grid>.row>.column.votes {
+.ui.grid > .row > .column.votes {
   display: flex;
 }
 
 ul.ui.list li:before {
-  content: '';
+  content: "";
 }
 
 .voters {
   clear: both;
   width: 100%;
 }
-
