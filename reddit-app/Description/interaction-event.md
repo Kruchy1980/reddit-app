@@ -1,0 +1,85 @@
+# How to add interaction event
+
+We tell Angular we want to respond to an event by surrounding the event name i in parentheses.
+
+##### example app.component.html
+
+To add a function call to the <button /> onClick event w can pas it through like below:
+
+<form action="" class="ui large form segment">
+  <h3 class="ui header">Add a Link</h3>
+  <div class="field">
+    <label for="title">title</label>
+    <input type="text" id="title" />
+  </div>
+  <div class="field">
+    <label for="link">Link</label>
+    <input type="text" name="link" id="link" />
+  </div>
+    <!-- here we can add the button inside form -->
+  <button
+    (click)="addArticcle(newtitle, newlink)"
+    class="ui positive right floted button"
+  >
+    Submit link
+  </button>
+</form>
+
+### Now, when the button i clicked, it will call a fundion dalled addArticle(), which we need to define on the AppComponent class as below:
+
+### app.component.ts
+import { Component } from '@angular/core'
+
+@Component({
+selector: 'app-root',
+templateUrl: './app.component.html',
+styleUrls: ['./app.component.css']
+})
+<!-- We are adding the class component -->
+export class AppComponent {
+    <!-- addArticle function includes title and link both are input elements when we can insert the article title and link to the article -->
+addArticle (title: HTMLInputElement, link: HTMLInputElement): boolean {
+<!-- // log just to check if button is working -->
+console.log(`Adding article title: ${title.value} and link: ${link.value}`);
+<!-- if there is nothing in inputs than do nothing -->
+return false;
+}
+}
+
+### But if we want it will work than we need to change the template a little bit.
+
+##### app.component.html
+
+<form action="" class="ui large form segment">
+  <h3 class="ui header">Add a Link</h3>
+  <div class="field">
+    <label for="title">title</label>
+    <!-- In the inputs we are using the '#' to tell Angular to assign those tags to a local variable. By adding the  %newtitle and #newlink to the appropriate input elements, we can pass them as variables into the addArticle() function on the button  -->
+    <input type="title" id="title" #newtitle/> <!-- changed #newtitle added-->
+  </div>
+  <div class="field">
+    <label for="link">Link</label>
+    <input type="text" name="link" id="link" #newlink /> <!-- changed - #newlink added-->
+  </div>
+  <!-- This is the button added with seamntic ui classes-->
+  <button
+    (click)="addArticle(newtitle, newlink)"
+    class="ui inverted violet  left floated button"
+  >
+    Submit link
+  </button>
+</form>
+
+##### To recap what we’ve done, we’ve made four changes:
+1. Created a button tag in our markup that shows the user where to click
+2. We created a function named addArticle that defines what we want to do when
+the button is clicked
+3. We added a (click) attribute on the button that says “call the function
+addArticle when this button is pressed”.
+4. We added the attribute #newtitle and #newlink to the <input> tags
+
+##### Where the bindings come from:
+
+1. addArticle is a function on our component definition class AppComponent
+2. newtitle comes from the resolve ( #newtitle ) on our <input> tag named title
+3. newlink comes from the resolve ( #newlink ) on our <input> tag named link
