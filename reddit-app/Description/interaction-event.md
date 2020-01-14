@@ -38,12 +38,12 @@ styleUrls: ['./app.component.css']
 <!-- We are adding the class component -->
 export class AppComponent {
     <!-- addArticle function includes title and link both are input elements when we can insert the article title and link to the article -->
-addArticle (title: HTMLInputElement, link: HTMLInputElement): boolean {
-<!-- // log just to check if button is working -->
-console.log(`Adding article title: ${title.value} and link: ${link.value}`);
-<!-- if there is nothing in inputs than do nothing -->
-return false;
-}
+    addArticle(title: HTMLInputElement, link: HTMLInputElement): boolean {
+    <!-- // log just to check if button is working -->
+    console.log(`Adding article title: ${title.value} and link: ${link.value}`);
+    <!-- if there is nothing in inputs than do nothing -->
+    return false;
+    }
 }
 
 ### But if we want it will work than we need to change the template a little bit.
@@ -64,7 +64,7 @@ return false;
   <!-- This is the button added with seamntic ui classes-->
   <button
     (click)="addArticle(newtitle, newlink)"
-    class="ui inverted violet  left floated button"
+    class="ui violet inverted right floated button"
   >
     Submit link
   </button>
@@ -83,3 +83,7 @@ addArticle when this button is pressed”.
 1. addArticle is a function on our component definition class AppComponent
 2. newtitle comes from the resolve ( #newtitle ) on our <input> tag named title
 3. newlink comes from the resolve ( #newlink ) on our <input> tag named link
+
+
+### Notice that:
+On our class AppComponent we define a new function called addArticle . It takes two arguments: title and link . Again,it’s important to realize that title and link are both objects of type HTMLInputElement and not the input values directly. To get the value from the input we have to call title.value.
