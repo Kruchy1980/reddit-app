@@ -7,11 +7,12 @@
     <div class="value">{{ votes }}</div>
     <div class="label">Points</div>
   </div>
-  <!-- This is an article information column -->
-  <div class="twelve wide column">
-    <!-- title is showed by template expansion strings as well -->
-    <a href="{{ link }}" class="ui large header">{{ title }}</a>
-  </div>
+</div>
+<!-- This is an article information column -->
+<div class="eight wide column hr">
+  <!-- title is showed by template expansion strings as well -->
+  <a class="ui large header" href="{{ link }}">{{ title }}</a>
+
   <ul class="ui big horizontal list voters">
     <li class="item">
       <a href (click)="voteUp()"> <i class="arrow up icon"></i>upvote</a>

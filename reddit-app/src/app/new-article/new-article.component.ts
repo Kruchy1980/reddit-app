@@ -8,7 +8,7 @@ import { ThrowStmt } from "@angular/compiler";
 })
 export class NewArticleComponent implements OnInit {
   // first declaring properties - 4 of them.
-  @HostBinding("att.class")
+  @HostBinding("attr.class")
   cssClass = "row";
   votes: number;
   title: string;
@@ -21,12 +21,14 @@ export class NewArticleComponent implements OnInit {
     this.votes = 10;
   }
   // declaring logic to votes change
-  voteUp() {
+  voteUp(): boolean {
     this.votes += 1;
+    return false;
   }
 
-  voteDown() {
+  voteDown(): boolean {
     this.votes -= 1;
+    return false;
   }
 
   ngOnInit() {}
