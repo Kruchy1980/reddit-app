@@ -1,33 +1,31 @@
-import { Component, OnInit, HostBinding } from "@angular/core";
+import { Component, OnInit, Input, HostBinding } from "@angular/core";
 import { ThrowStmt } from "@angular/compiler";
-// Firstly define new Component with decorator @Component with understanding that the selector says that the component can be placed on the page by using the tag <app-new-article> so we can say that the selector is a tag name.
+// Here we are importing the class
+import { NewArticle } from "./new-article.model";
+
 @Component({
   selector: "app-new-article",
   templateUrl: "./new-article.component.html",
   styleUrls: ["./new-article.component.css"]
 })
 export class NewArticleComponent implements OnInit {
-  // first declaring properties - 4 of them.
   @HostBinding("attr.class")
   cssClass = "row";
-  votes: number;
-  title: string;
-  link: string;
+  @Input() newArticle: NewArticle;
 
-  // constructor creates the class we need
+
   constructor() {
-    this.title = "Angular";
-    this.link = "http://angular.io";
-    this.votes = 10;
+// Articl is populated by the Input now, so we do not need anything here now
+    // this.newArticle = new NewArticle("Angular", "http://angular.io", 10);
   }
   // declaring logic to votes change
   voteUp(): boolean {
-    this.votes += 1;
+    this.newArticle.votes += 1;
     return false;
   }
 
   voteDown(): boolean {
-    this.votes -= 1;
+    this.newArticle.votes -= 1;
     return false;
   }
 

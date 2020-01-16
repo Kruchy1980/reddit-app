@@ -2,14 +2,20 @@
 <div class="four wide column center aligned votes">
   <div class="ui statistic">
     <!-- votes are showed by template expansion strings -->
-    <div class="value">{{ votes }}</div>
+    <!-- Here we are changing votes for article votes -->
+    <!-- <div class="value">{{ votes }}</div> -->
+    <div class="value">{{ newArticle.votes }}</div>
     <div class="label">Points</div>
   </div>
 </div>
 <!-- This is an article information column -->
 <div class="eight wide column hr">
   <!-- title is showed by template expansion strings as well -->
-  <a class="ui large header" href="{{ link }}">{{ title }}</a>
+  <!-- Here the same thing we are doing with link and title -->
+  <!-- <a class="ui large header" href="{{ link }}">{{ title }}</a> -->
+  <a class="ui large header" href="{{ newArticle.link }}">{{
+    newArticle.title
+  }}</a>
 
   <ul class="ui big horizontal list voters">
     <li class="item">
