@@ -13,9 +13,8 @@ export class NewArticleComponent implements OnInit {
   cssClass = "row";
   @Input() newArticle: NewArticle;
 
-
   constructor() {
-// Articl is populated by the Input now, so we do not need anything here now
+    // Articl is populated by the Input now, so we do not need anything here now
     // this.newArticle = new NewArticle("Angular", "http://angular.io", 10);
   }
   // declaring logic to votes change

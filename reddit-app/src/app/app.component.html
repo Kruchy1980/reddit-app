@@ -18,7 +18,15 @@
     Submit link
   </button>
 </form>
-div.ui.grid.posts>
+<!-- start adding here -->
+<div class="ui grid posts">
+  <app-new-article
+    *ngFor="let newArticle of newArticles"
+    [newArticles]="newArticle"
+  >
+  </app-new-article>
+</div>
+<!-- end adding here -->
 
 <!-- adding the new-article-component  -->
 <div class="ui grid posts">
