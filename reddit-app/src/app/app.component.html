@@ -18,17 +18,19 @@
     Submit link
   </button>
 </form>
-<!-- start adding here -->
+<!-- start adding here this piece of code is responsible for more than one digfferent article -->
 <div class="ui grid posts">
+  <!-- Now we can change the *ngFor function as form
+  *ngFor="let newArticle of NewArticles" to as below-->
   <app-new-article
-    *ngFor="let newArticle of newArticles"
-    [newArticles]="newArticle"
+    *ngFor="let newArticle of sortedNewArticles()"
+    [newArticle]="newArticle"
   >
   </app-new-article>
 </div>
 <!-- end adding here -->
 
-<!-- adding the new-article-component  -->
-<div class="ui grid posts">
+<!-- adding the new-article-component this component in not necessary yet -->
+<!-- <div class="ui grid posts">
   <app-new-article> </app-new-article>
-</div>
+</div> -->

@@ -30,6 +30,9 @@ export class NewArticle {
       // e.g. http://foo.com/path/to/bar
       const domainAndPath: string = this.link.split("//")[1];
       // e.g. foo.com/path/to/bar
+      // we are changing a little this line
+      // return domainAndPath.split("/")[0];
+      //for:
       return domainAndPath.split("/")[0];
     } catch (err) {
       return null;
